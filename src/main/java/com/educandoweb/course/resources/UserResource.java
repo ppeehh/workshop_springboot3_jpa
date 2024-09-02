@@ -1,7 +1,4 @@
-
 package com.educandoweb.course.resources;
-
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,11 +17,6 @@ public class UserResource {
 	@Autowired 
 	private UserService service;
 	
-	@GetMapping
-	public ResponseEntity<List<User>> findAll() {
-		List<User> list = User.findAll();
-		return ResponseEntity.ok().body(list);
-	}
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id) {
